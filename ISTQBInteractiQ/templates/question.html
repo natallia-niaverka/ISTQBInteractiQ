@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question {{ question_number }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+<div class="row  justify-content-center question">
+<div class="col-md-8">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+            <span>{{ message }}</span>
+            </div>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <h5 class="card-title">{{ question.title | safe }}</h5>
+    <form method="POST" class="answers ml-3">  <!-- Add class to add left margin to the form -->
+        {% for option, answer in question.options.items() %}
+            <div class="form-check">
+                <input type="radio" name="option" id="option-{{ option }}" value="{{ option }}" class="form-check-input" required>
+                <label for="option-{{ option }}" class="form-check-label">{{ option }}: {{ answer }}</label>
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-custom1 btn-primary">Submit</button>
+    </form>
+</div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Surveys</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+<div class="row  justify-content-center question">
+<div class="col-md-8">
+    <h1>Available Surveys:</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+              <div class="alert alert-danger" role="alert">
+            <span>{{ message }}</span>
+              </div>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <ul>
+        {% for survey in surveys %}
+            <li><a href="{{ url_for('start_survey', filename=survey) }}">{{ survey }}</a></li>
+        {% endfor %}
+    </ul>
+</div></div>
+</div>
+</body>
+</html>

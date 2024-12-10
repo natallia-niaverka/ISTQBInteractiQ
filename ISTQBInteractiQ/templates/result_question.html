@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result for Question {{ question_number }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+<div class="row  justify-content-center question">
+<div class="col-md-8">
+    <h5 class="card-title">{{ question.title | safe }}</h5>
+    <ul>
+        {% for option, answer in question.options.items() %}
+            <li>{{ option }}: {{ answer }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Your answer: {{ user_answer }}</p>
+    <p>Correct answer: {{ correct_answer }}</p>
+
+    <a href="{{ url_for('question') }}">Next Question</a>
+</div>
+</div>
+</div>
+</body>
+</html>

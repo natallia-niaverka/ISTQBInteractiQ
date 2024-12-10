@@ -1,0 +1,69 @@
+/* styles.css */
+
+/* Button Styles */
+.btn-custom {
+    background-color: #007bff;   /* Button primary color */
+    color: white;                /* Button text color */
+    font-size: 1.2rem;           /* Increase font size */
+    padding: 10px 20px;          /* Padding for button */
+    border: none;                /* Remove border */
+    border-radius: 5px;         /* Rounded corners */
+    cursor: pointer;             /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;   /* Darker shade on hover */
+}
+/* styles.css */
+
+/* General input styling */
+input[type="radio"] {
+    margin-right: 10px; /* Space between radio button and label */
+}
+
+label {
+    margin-left: 5px; /* Space to the left of the label */
+}
+
+/* Adjust the overall form */
+form {
+    margin-left: 20px; /* Add margin to the form for overall spacing */
+}
+
+h2 {
+    margin-left: 20px; /* Margin for heading if needed */
+}
+
+
+.container{
+    background-color: #fef6ff;
+        border-radius: 8px;
+}
+html,
+body{
+    min-height:100%;
+}
+
+html{
+    background: #e0e0e0;
+}
+
+body{
+    padding: 48px 0;
+    background-color:transparent!important;
+}
+
+.question{
+    padding: 48px 0;
+}
+
+h1{
+    margin-bottom: 32px;
+}
+
+
+
+.answers .btn{
+    margin-top:24px;
+}
